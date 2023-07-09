@@ -37,7 +37,7 @@ export class NodesController {
             });
             await channel.sendToQueue('postgre-neo4j-sync', Buffer.from(JSON.stringify(message)));
             await pool.query('COMMIT'); // Commit the transaction
-            res.status(201).json("Successfully Created Node");
+            res.status(201).json({message: 'successfully created node'});
         } catch (error) {
             await pool.query('ROLLBACK');
             console.error(error);
@@ -63,7 +63,7 @@ export class NodesController {
             };
             await channel.sendToQueue('postgre-neo4j-sync', Buffer.from(JSON.stringify(message)));
 
-            res.json(pgResult.rows[0]);
+            res.status(200).json({message: 'successfully updated node'});
         } catch (error) {
             console.error(error);
             res.status(500).json({ message: error });
@@ -90,7 +90,7 @@ export class NodesController {
             };
             await channel.sendToQueue('postgre-neo4j-sync', Buffer.from(JSON.stringify(message)));
 
-            res.json(pgResult.rows[0]);
+            res.status(200).json({message: 'successfully was deleted node'});
         } catch (error) {
             res.status(500).json({ message: error });
         }
