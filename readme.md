@@ -10,7 +10,14 @@ To run the application and perform CRUD operations, follow these steps:
 ### 1 : Clone the repository:
 
 
-## Start the application using Docker Compose:
+## Before Start the application using Docker Compose:
+> ⚠️ **Warning:** 
+>Make sure that you are not running on your local machine this services.
+ 
+
+- RabbitMQ 
+- Postgres 
+- Neo4j 
 
 ### 1 : docker-compose up --build:
 
@@ -55,4 +62,5 @@ RabbitMQ is used as the message broker for data synchronization between Postgres
 
 ## Frontend Hosting Note *
 
-Please note that the frontend interface is not hosted because the Node.js application runs locally. To interact with the locally hosted Node.js application, it is recommended to run the frontend locally as well.
+> ⚠️ **Warning:**
+> Please note that the frontend interface is not hosted because the Node.js application runs locally. To interact with the locally hosted Node.js application, it is recommended to run the frontend locally as well.

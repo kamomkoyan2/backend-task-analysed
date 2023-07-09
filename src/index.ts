@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import bodyParser from "body-parser";
 import container from "./shared/DI.setup";
 import cors from 'cors'
-
+import fs from 'fs'
 const router = container.resolve('router')
 const route = router.getRouter()
 
