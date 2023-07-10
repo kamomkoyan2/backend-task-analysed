@@ -121,11 +121,11 @@ export class NodesController {
     private async connectNodes(req: Request, res: Response): Promise<void> {
         const channel = container.resolve('messageQueue')
         try {
-            const { sourceNodeId, targetNodeId } = req.body;
+            const { sourceNodeId, relationshipType, targetNodeId } = req.body;
 
             const message: MessagePayload = {
                 type: 'connect',
-                payload: {sourceNodeId, targetNodeId},
+                payload: {sourceNodeId, relationshipType, targetNodeId},
             };
             await channel.sendToQueue('postgre-neo4j-sync', Buffer.from(JSON.stringify(message)));
             res.status(201).json({ message: 'Connection created' });

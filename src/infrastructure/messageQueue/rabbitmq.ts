@@ -127,10 +127,9 @@ handleInsertMessage(payload: any): void {
 
     async handleConncetion(payload: any)  {
         // Add relationship in Neo4j
-        const {sourceNodeId, targetNodeId} = payload;
-        const relationshipType = 'FRIEND';
+        const {sourceNodeId, relationshipType, targetNodeId} = payload;
         const neo4jQuery = `MERGE (p1:Node {id: $sourceNodeId}) MERGE (p2:Node {id: $targetNodeId}) CREATE (p1)-[:${relationshipType}]->(p2)`;
-        await this.session.run(neo4jQuery, { sourceNodeId, targetNodeId }).catch(error=> console.log(error));
+        await this.session.run(neo4jQuery, { sourceNodeId, relationshipType, targetNodeId }).catch(error=> console.log(error));
     }
 
 
