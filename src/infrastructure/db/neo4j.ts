@@ -6,7 +6,7 @@ export default class Neo4jDatabase{
     private session: Session;
     constructor() {
         this.driver = neo4j.driver(
-            'neo4j://task-analysed-neo4j-1'
+            'neo4j://backend-task-analysed-neo4j-1'
         )
     }
 

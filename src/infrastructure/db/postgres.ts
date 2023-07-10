@@ -7,7 +7,7 @@ export default class PostgresDatabase {
         this.pool = new Pool({
             user: 'postgres',        // PostgreSQL username
             password: 'postgres',    // PostgreSQL password
-            host: 'task-analysed-postgres-1',       // PostgreSQL host
+            host: 'backend-task-analysed-postgres-1',       // PostgreSQL host
             port: 5432,              // PostgreSQL port
             database: 'postgres' // PostgreSQL database name
         })

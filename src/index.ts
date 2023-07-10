@@ -14,7 +14,7 @@ dotenv.config()
 
 
 const app: Express = express()
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // const whitelist = ['http://127.0.0.1:5173', 'http://example2.com']
 // const corsOptions:any =   {
